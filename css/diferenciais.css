@@ -28,6 +28,7 @@
 .diferenciais__item--especialistas {
   background-image: url(../img/icone-quimica.png);
 }
+
 .item__titulo {
   color: var(--cinza-escuro);
   font-weight: 700;
