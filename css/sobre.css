@@ -34,3 +34,26 @@
 .sobre__imagem {
   display: none;
 }
+
+@media screen and (min-width: 1024px) {
+  .sobre {
+    display: flex;
+  }
+
+  .sobre__container {
+    margin-right: 3rem;
+  }
+
+  .sobre__titulo {
+    text-align: left;
+  }
+
+  .sobre__texto--divisao {
+    border-bottom: 1p solid var(--cinza-medio);
+    padding-bottom: 1.5rem;
+  }
+
+  .sobre__imagem {
+    display: block;
+  }
+}
