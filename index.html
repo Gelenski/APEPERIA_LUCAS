@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apeperia | 3DS</title>
 
+  <script src="script_modal.js" defer></script>
+
   <!-- Links CSS -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/cabecalho.css" />
@@ -19,6 +21,7 @@
   <link rel="stylesheet" href="css/contatos.css" />
   <link rel="stylesheet" href="css/institucional.css">
   <link rel="stylesheet" href="css/rodape.css">
+  <link rel="stylesheet" href="css/contatos-modal.css">
 
   <!-- Links Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +40,7 @@
         <li class="cabecalho__link"><a href="#">Blog</a></li>
         <li class="cabecalho__link"><a href="#">Destaques</a></li>
         <li class="cabecalho__link"><a href="#">Institucional</a></li>
-        <li class="cabecalho__link"><a href="#">Contato</a></li>
+        <li class="cabecalho__link"><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -139,8 +142,6 @@
             <a href="plano.html" class="cartao__botao cartao__botao--start botao">Assinar plano</a>
           </article>
         </li>
-      </ul>
-      <ul class="planos__cartoes">
         <li class="cartao cartao--ultra">
           <h3 class="cartao__titulo">Lucas</h3>
           <article class="cartao__conteudo">
@@ -152,8 +153,6 @@
             <a href="plano.html" class="cartao__botao cartao__botao--ultra botao">Assinar plano</a>
           </article>
         </li>
-      </ul>
-      <ul class="planos__cartoes">
         <li class="cartao cartao--mega">
           <h3 class="cartao__titulo">Mega</h3>
           <article class="cartao__conteudo">
@@ -166,11 +165,19 @@
         </li>
       </ul>
     </section>
-    <section class="contato container">
+    <section id="contato" class="contato container">
       <h2 class="contato__titulo">Contato</h2>
       <p>Entre em contato com a gente</p>
-      <a href="contato.html" class="contato__botao botao">Entre em contato</a>
+      <!--! ------------ Modal --------------------->
+      <button id="botaoModal" class="botao botao__modal">Entre em contato</button>
     </section>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Preencha os seguintes campos:</h1>
+        <!-- Os inputs -->
+      </div>
+    </div>
     <section class="institucional container">
       <h2 class="institucional__titulo">Institucional</h2>
       <div class="institucional__conteudo">
