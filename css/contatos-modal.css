@@ -24,13 +24,14 @@
 }
 
 /* *Conteúdo do Modal */
+
 .modal-content {
     background-color: #fefefe;
     margin: 12% auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 80%;
+    width: 600px;
 }
 
 .close {
@@ -45,4 +46,59 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.form__contato {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 550px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding: 1.25rem;
+    border-radius: 5px;
+    box-shadow: 2px 4px rgba(54, 54, 54, 0.171);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+#botao__form {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#botao__form:active {
+    background-color: #ccc;
+    color: #333;
+    border: 2px solid #333;
+}
+
+/* Tornando responsivo */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .form__contato {
+        width: 90%;
+    }
 }

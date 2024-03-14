@@ -174,8 +174,25 @@
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h1>Preencha os seguintes campos:</h1>
-        <!-- Os inputs -->
+        <form class="form__contato" id="form">
+          <h1>Preencha os seguintes campos:</h1>
+          <!-- Os inputs -->
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" placeholder="Digite seu nome">
+          <label for="dataNasc">Data de nascimento:</label>
+          <input type="date" name="dataNasc" id="dataNasc">
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" id="email">
+          <label for="rg">RG:</label>
+          <input type="text" name="rg" id="rg">
+          <label for="opcao">Futura área de atuação:</label>
+          <select name="opcao" id="opcao">
+            <option value="outro">Outra Área</option>
+            <option value="exatas">Exatas</option>
+            <option value="humanas">Humanas</option>
+          </select>
+          <button id="botao__form" type="submit">Enviar</button>
+        </form>
       </div>
     </div>
     <section class="institucional container">
