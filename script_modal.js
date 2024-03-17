@@ -23,16 +23,6 @@ const rg = document.querySelector("#rg");
 const opcao = document.querySelector("#opcao");
 const elementosInput = [nome, dataNasc, email, rg, opcao];
 
-// const mostraErro = (input) => {
-//   const formField = input.parentElement;
-//   formField.classList.remove("success");
-//   formField.classList.add("error");
-// };
-// const mostraSucesso = (input) => {
-//   const formField = input.parentElement;
-//   formField.classList.remove("error");
-//   formField.classList.add("success");
-// };
 addEventListener("submit", (form) => {
   form.preventDefault();
   if (!nome.value) {
@@ -67,21 +57,24 @@ addEventListener("submit", (form) => {
   limparFormulario();
   modal.style.display = "none";
 });
+
 const validaEmail = (email) => {
   const emailRegex =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return emailRegex.test(email);
 };
 //formatação/validação do rg
-function testaRG(v) {
+const testaRG = (v) => {
   const regexRG = /^(\d{1,2})\.?(\d{3})\.?(\d{3})-?(\d{1})$/;
   return regexRG.test(v);
-}
-function Rg(v) {
+};
+
+const Rg = (v) => {
   v = v.replace(/\D/g, "");
   v = v.replace(/(\d{1,2})(\d{3})(\d{3})(\d{1})$/, "$1.$2.$3-$4");
   return v;
-}
+};
+
 document.getElementById("rg").addEventListener("input", function (e) {
   var rg = e.target.value;
   e.target.value = Rg(rg);
