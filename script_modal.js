@@ -35,24 +35,32 @@ const elementosInput = [nome, dataNasc, email, rg, opcao];
 // };
 addEventListener("submit", (form) => {
   form.preventDefault();
-  if (nome.value === "") {
+  if (!nome.value) {
     alert("Por favor insira seu nome");
     return;
   }
 
-  if (dataNasc.value === "") {
+  if (!dataNasc.value) {
     alert("insira sua data de nascimento");
     return;
   }
-  if (email.value.trim() === "") {
+  if (!email.value.trim()) {
     alert("Por favor insira seu email");
     return;
   } else if (!validaEmail(email.value)) {
     alert("Digite seu email corretamente");
     return;
   }
-  if (rg.value.trim() == "") {
+  if (!rg.value.trim()) {
     alert("Por favor insira seu RG");
+    return;
+  }
+  if (!testaRG(rg.value)) {
+    alert("Insira seu RG corretamente");
+    return;
+  }
+  if (!opcao.value) {
+    alert("Escolha sua área de atuação");
     return;
   }
   alert("Formulário enviado com sucesso!");
@@ -64,7 +72,11 @@ const validaEmail = (email) => {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return emailRegex.test(email);
 };
-//formatação do rg
+//formatação/validação do rg
+function testaRG(v) {
+  const regexRG = /^(\d{1,2})\.?(\d{3})\.?(\d{3})-?(\d{1})$/;
+  return regexRG.test(v);
+}
 function Rg(v) {
   v = v.replace(/\D/g, "");
   v = v.replace(/(\d{1,2})(\d{3})(\d{3})(\d{1})$/, "$1.$2.$3-$4");
