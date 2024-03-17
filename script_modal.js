@@ -15,3 +15,70 @@ window.onclick = function (event) {
 };
 
 //Eventos do formulário
+const form = document.querySelector("#form");
+const nome = document.querySelector("#nome");
+const dataNasc = document.querySelector("#dataNasc");
+const email = document.querySelector("#email");
+const rg = document.querySelector("#rg");
+const opcao = document.querySelector("#opcao");
+const elementosInput = [nome, dataNasc, email, rg, opcao];
+
+// const mostraErro = (input) => {
+//   const formField = input.parentElement;
+//   formField.classList.remove("success");
+//   formField.classList.add("error");
+// };
+// const mostraSucesso = (input) => {
+//   const formField = input.parentElement;
+//   formField.classList.remove("error");
+//   formField.classList.add("success");
+// };
+addEventListener("submit", (form) => {
+  form.preventDefault();
+  if (nome.value === "") {
+    alert("Por favor insira seu nome");
+    return;
+  }
+
+  if (dataNasc.value === "") {
+    alert("insira sua data de nascimento");
+    return;
+  }
+  if (email.value.trim() === "") {
+    alert("Por favor insira seu email");
+    return;
+  } else if (!validaEmail(email.value)) {
+    alert("Digite seu email corretamente");
+    return;
+  }
+  if (rg.value.trim() == "") {
+    alert("Por favor insira seu RG");
+    return;
+  }
+  alert("Formulário enviado com sucesso!");
+  limparFormulario();
+  modal.style.display = "none";
+});
+const validaEmail = (email) => {
+  const emailRegex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRegex.test(email);
+};
+//formatação do rg
+function Rg(v) {
+  v = v.replace(/\D/g, "");
+  v = v.replace(/(\d{1,2})(\d{3})(\d{3})(\d{1})$/, "$1.$2.$3-$4");
+  return v;
+}
+document.getElementById("rg").addEventListener("input", function (e) {
+  var rg = e.target.value;
+  e.target.value = Rg(rg);
+});
+
+const limparFormulario = () => {
+  nome.value = "";
+  dataNasc.value = "";
+  email.value = "";
+  rg.value = "";
+  opcao.value = "";
+};

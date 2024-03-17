@@ -63,7 +63,7 @@
 input,
 select,
 textarea {
-    width: 100%;
+    width: 98%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -78,6 +78,7 @@ textarea {
     color: #fff;
     font-size: 1.1rem;
     cursor: pointer;
+    margin-top: 1rem;
 }
 
 #botao__form:active {
@@ -110,9 +111,4 @@ textarea {
 
 .error input {
     border: 2px solid red;
-}
-
-.error small {
-    color: red;
-    font-size: 12px;
 }
